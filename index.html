@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/bootstrap-icons-1.11.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/bootstrap-icons-1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/uicons-solid-rounded-2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+
+  <!-- bootstrap link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>invoice Management System</title>
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="container-fluid  px-0">
+    <div class="row gx-0">
+      <div class="col-2 ">
+        <div class="sidebar">
+          <img src="assets/logo1.png" alt="Logo" class="img-fluid mx-auto d-block mb-4 mt-3 logo-img"
+          style="max-width: 80%;">
+        <ul class="side-menu">
+          <li>
+            <a href="dashboard.html" class="text-decoration-none menuitems d-flex">
+              <div class="dbicon-inactive me-3 rounded">
+                <i class="bi bi-grid-fill"></i>
+              </div>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="contacts.html" class="text-decoration-none menuitems d-flex">
+              <div class="dbicon-inactive me-3  rounded">
+                <i class="bi bi-person-vcard-fill"></i>
+              </div>
+              <span>Contacts</span>
+
+            </a>
+          </li>
+          <li>
+            <a href="index.html" class="text-decoration-none  menuitems d-flex justify-content-between active" >
+              <div class="d-flex align-items-center justify-content-center">
+                <div class="dbicon me-3 pe-1 rounded pt-1">
+                  <i class="fi fi-sr-receipt flaticon"></i>
+                  </div>
+                  <span> Invoice</span>
+                  <i class="bi bi-chevron-right ms-1"></i>
+
+              </div>
+              <div>
+              </div>
+              </a>
+              
+          </li>
+          <li class="invoicedropdown" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <a  class="text-decoration-none menuitems d-flex justify-content-between">
+                <div class="d-flex">
+                  <div class="dbicon-inactive me-3 px-1 rounded">
+                    <i class="bi bi-gear-fill"></i>
+                    </div>
+                  <span>Setting</span>
+                </div>
+              <div>
+                <i class="bi bi-chevron-down" ></i>
+              </div>
+            </a>
+            <div class="list-group collapse invoice-collapse"  id="collapseExample">
+                <a href="index.html" class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu 1</a>
+                <a href="#" class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu 2</a>
+                <a href="#" class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu 3</a>
+              </div>
+          </li>
+        </ul>
+        </div>
+      </div>
+
+      <div class="col-10 col-sm-10">
+        <nav class="navbar navbar-expand navbar-light bg-white sticky-top">
+          <ul class="navbar-nav Notifications">
+            <li class="nav-item position-relative">
+              <div class="bell">
+                <a class="nav-link" href="#">
+                  <div class="position-relative">
+                    <i class="fa fa-bell noti" aria-hidden="true"></i>
+                    <span
+                      class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-0 bell-count"><span
+                        class="visually-hidden">unread messages</span></span>
+                  </div>
+                  <!-- <img class="count" src="assets/count.svg" alt=""> -->
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Avatar -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="assets/Profile Pic.png" alt="Avatar" class="rounded-circle">
+                <span class="myname">Biswajit Sahoo </span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#"><i class="bi bi-person-circle pe-2"></i>Profile</a>
+                <a class="dropdown-item" href="#"><i class="bi bi-gear-fill pe-2"></i>Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+            </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="p-3 parent">
+          <div class="row d-flex align-items-center labelparent">
+            <div class="col-6 d-flex justify-content-start">
+              <h6 class=" overview mb-0">Overview</h6>
+            </div>
+            <div class="col-6 d-flex justify-content-end px-4">
+              <!-- <button class="btn-sm btn-create rounded" data-bs-toggle="modal" data-bs-target="#createModal">Create
+                Invoice</button> -->
+                
+                  <button class="button-create"  data-bs-toggle="modal" data-bs-target="#createModal">
+                      Create Invoice
+                  </button>
+              
+            </div>
+          </div>
+
+          
+
+          <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                <strong class="me-auto">Invoice</strong>
+                <small>Just Now</small>
+                <button type="button" class="btn-close" id="btnClose" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Invoice Created!
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row py-2">
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+              <div class="card mycard my-2 border-0">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="total-invoice  d-flex" style="background-color: #33C173;">
+                      <img style="padding-left: 7px;" src="assets/total-invoice.svg" alt="">
+                    </div>
+                    <div class="px-3">
+                      <div>
+                        Total Invoice
+                      </div>
+                      <div>
+                        <h6>2260</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prog py-3"> </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+              <div class="card mycard my-2 border-0">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="total-invoice  d-flex" style="background-color: #E13334;">
+                      <img style="padding-left: 8px;" src="assets/pending-invoice.svg" alt="">
+                    </div>
+                    <div class="px-3">
+                      <div>
+                        Total Invoice
+                      </div>
+                      <div>
+                        <h6>2260</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="progg py-3"> </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+              <div class="card mycard my-2 border-0">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="total-invoice  d-flex" style="background-color: #33C173;">
+                      <img style="padding-left: 8px;" src="assets/paid-invoice.svg" alt="">
+                    </div>
+                    <div class="px-3">
+                      <div>
+                        Total Invoice
+                      </div>
+                      <div>
+                        <h6>2260</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="prog py-3"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-3 tab table-responsive">
+            <table class="table table-sm table-hover table-borderless">
+              <thead>
+                <tr>
+                  <div class="row mb-2">
+                    <div class="col-9 d-flex">
+                      <h4>Invoice Overview</h4>
+                      <div class="ms-3">
+                        <i class="fa fa-search searchicon" aria-hidden="true"></i>
+                        <input class="searchbox ps-2" type="search" placeholder="Search...">
+                      </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end">
+                      <button type="button" class="filterbtn px-2 rounded" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop"><i
+                          class="bi bi-sliders me-2"></i>Filter</button>
+
+                    </div>
+                  </div>
+                  <th scope="col"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <th scope="col">Invoice Id</th>
+                  <th scope="col">Client Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Due Date</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class="bad px-2">Paid</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class=" bad px-2">Paid</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class="bad2 px-2">Due</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class="bad2 px-2">Unpaid</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class="bad px-2">Paid</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+                <tr>
+                  <th scope="row"> <input class="form-check-input mt-0" type="checkbox" value=""
+                      aria-label="Checkbox for following text input">
+                  </th>
+                  <td>INV-001</td>
+                  <td>John Doe</td>
+                  <td>2023-01-15</td>
+                  <td>$500.00</td>
+                  <td>2023-02-15</td>
+                  <td><span class="bad px-2">Paid</span></td>
+                  <td><button class="edit" data-bs-toggle="modal" data-bs-target="#editModal"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button> <button class="delete"
+                      data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+
+
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <!-- <img src="..." class="rounded me-2" alt="..."> -->
+                  <strong class="me-auto">Invoice</strong>
+                  <small>Just Now</small>
+                  <button type="button" class="btn-close" id="btnClose" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                  Invoice Created!
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <nav aria-label="Page navigation example ">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link pagee" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item "><a class="page-link pageenum" href="#">1</a></li>
+              <li class="page-item"><a class="page-link pageenum" href="#">2</a></li>
+              <li class="page-item"><a class="page-link pageenum" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link pagee" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <!-- <i class="bi bi-arrow-right-circle"></i> -->
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+  <!--Create Modal -->
+  <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Invoice</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Invoice Id</label>
+                <input class="form-control form-control-sm" type="number">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Client Name</label>
+                <input class="form-control form-control-sm" type="text">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Date</label>
+                <input class="form-control form-control-sm" type="date">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Amount</label>
+                <input class="form-control form-control-sm" type="number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Due Date</label>
+                <input class="form-control form-control-sm" type="date">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Status</label>
+                <select class="form-select form-select-sm" aria-label="select status">
+                  <option value="">--Select--</option>
+                  <option value="">Paid</option>
+                  <option value="1">Unpaid</option>
+                  <option value="2">Due</option>
+                  <option value="3">Overdue</option>
+                  <option value="4">Rejected</option>
+                  <option value="5">Received Payment</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        </form>
+
+        <div class="modal-footer modalbtn">
+          <button type="button" class="btn btn-outline-danger">Reset</button>
+          <button type="button" class="btn save" data-bs-dismiss="modal" id="liveToastBtn">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <!--Edit Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Invoice Id</label>
+                <input class="form-control form-control-sm" type="number" disabled>
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Client Name</label>
+                <input class="form-control form-control-sm" type="text" disabled>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Date</label>
+                <input class="form-control form-control-sm" type="date">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Amount</label>
+                <input class="form-control form-control-sm" type="number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Due Date</label>
+                <input class="form-control form-control-sm" type="date">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="" class="form-label">Status</label>
+                <select class="form-select form-select-sm" aria-label="select status">
+                  <option value="">--Select--</option>
+                  <option value="">Paid</option>
+                  <option value="1">Unpaid</option>
+                  <option value="2">Due</option>
+                  <option value="3">Overdue</option>
+                  <option value="4">Rejected</option>
+                  <option value="5">Received Payment</option>
+                </select>
+              </div>
+            </div>
+        </div>
+        </form>
+        <div class="modal-footer modalbtn">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn save" data-bs-dismiss="modal" id="liveToastBtn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Invoice</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-center">Are you sure?</h4>
+          <p>Do you really want to delete this invoice? This process can't be undone.</p>
+          <div class="modal-footer modalbtn">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Not now</button>
+            <button type="button" class="btn save" data-bs-dismiss="modal">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Backdrop -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop"
+    aria-labelledby="offcanvasWithBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Search Filter</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row justify-content-center px-2">
+        <div class="col-6 mb-3 px-2">
+          <label for="" class="form-label">From </label>
+          <input class="form-control form-control-sm" type="date">
+        </div>
+        <div class="col-6 mb-3">
+          <label for="" class="form-label">To </label>
+          <input class="form-control form-control-sm" type="date">
+        </div class="">
+        <button class="btn save mt-3 "><i class="bi bi-search me-2"></i>Search</button>
+
+      </div>
+
+    </div>
+
+
+    
+
+
+
+
+
+    <script src="
+    https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="  crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+      </script>
+    <!-- <script type="javascript" src="js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+      
+    <script>
+
+// $(document).on('click','#basicToastBtn',function(){
+//   $('#liveToast').show();
+// });
+
+// $(document).on('click','#btnClose',function(){
+//   $('#liveToast').show();
+// });
+
+var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', function () {
+    var toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
+
+    </script>
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+body{
+    background-color: #E8E2EE;
+}
+.main{
+    height: 100vh;
+  
+}
+
+body .row2{
+    background-color: #5a199b !important;
+}

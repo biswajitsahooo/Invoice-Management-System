@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons-1.11.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons-1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/uicons-solid-rounded-2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>invoice Management System</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="container-fluid px-0">
+        <div class="row gx-0">
+            <div class="col-2 ">
+                <div class="sidebar">
+                    <img src="assets/logo1.png" alt="Logo" class="img-fluid mx-auto d-block mb-4 mt-3 logo-img"
+                        style="max-width: 80%;">
+                    <ul class="side-menu">
+                        <li>
+                            <a href="dashboard.html" class="text-decoration-none active menuitems d-flex">
+                              <div class="dbicon me-3 rounded">
+                                <i class="bi bi-grid-fill"></i>
+                              </div>
+                              <span>Dashboard</span>
+                              <i class="bi bi-chevron-right ms-2"></i>
+
+                            </a>
+                          </li>
+                          <li>
+                            <a href="contacts.html" class="text-decoration-none menuitems  d-flex">
+                              <div class="dbicon-inactive me-3  rounded">
+                                <i class="bi bi-person-vcard-fill"></i>
+                              </div>
+                              <span>Contacts</span>
+            
+                            </a>
+                          </li>
+                          <li>
+                            <a href="index.html" class="text-decoration-none  menuitems d-flex justify-content-between" >
+                              <div class="d-flex align-items-center justify-content-center">
+                                <div class="dbicon-inactive me-3 pe-1 rounded pt-1">
+                                  <i class="fi fi-sr-receipt flaticon"></i>
+                                  </div>
+                                  <span> Invoice</span>
+                              </div>
+                              <div>
+                              </div>
+                              </a>
+                              
+                          </li>
+                          <li class="invoicedropdown" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <a  class="text-decoration-none menuitems d-flex justify-content-between">
+                                <div class="d-flex">
+                                  <div class="dbicon-inactive me-3 px-1 rounded">
+                                    <i class="bi bi-gear-fill"></i>
+                                    </div>
+                                  <span>Setting</span>
+                                </div>
+                              <div>
+                                <i class="bi bi-chevron-down" ></i>
+                              </div>
+                            </a>
+                            <div class="list-group collapse invoice-collapse" id="collapseExample">
+                                <a href="index.html"
+                                    class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu 1</a>
+                                <a href="#" class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu
+                                    2</a>
+                                <a href="#" class="list-group-item list-group-item-action submenu ps-5 py-2">Sub menu
+                                    3</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-10 ">
+                <nav class="navbar navbar-expand navbar-light bg-white ">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav nav flex-column Notifications">
+                            <li class="nav-item position-relative">
+                                <div class="position-relative">
+
+                                </div>
+                                <div class="bell">
+                                    <a class="nav-link" href="#">
+                                        <div class="position-relative">
+                                            <i class="fa fa-bell noti" aria-hidden="true"></i>
+                                            <span
+                                                class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-0 bell-count"><span
+                                                    class="visually-hidden">unread messages</span></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                        <!-- Avatar -->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/Profile Pic.png" alt="Avatar" class="rounded-circle">
+                                    <span class="myname">Biswajit Sahoo </span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#"><i class="bi bi-person-circle pe-2"></i>Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="bi bi-gear-fill pe-2"></i>Settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-sign-out pe-2" aria-hidden="true"></i>Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="row p-3">
+                    <div class="col-8">
+                        <div class="row ">
+                            <div class="divhead d-flex justify-content-between">
+                                <div class="dbtitle">
+                                    <h5>Dashboard</h5>
+                                </div>
+                                <div class="rightside d-flex">
+                                    <div class="dbsearch pe-2">
+                                        <button class="btn btn-sm icon">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="dbcalender">
+                                        <button class="btn btn-sm icon position-relative">
+                                            <div class="position-relative sparent">
+                                                <i class="bi bi-calendar2-fill"></i> <span
+                                                    class="position-absolute top-100 start-100 translate-middle badge dot border border-light rounded-circle bg-danger p-0 "
+                                                    width><span class="visually-hidden">unread messages</span></span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row px-0 mx-0">
+                                <div class="col-lg-4 ">
+                                    <div class=" card border-0 cards   my-1 ps-0 " style="height: 5rem;">
+                                        <div
+                                            class="card-body card1 position-relative d-flex justify-content-between pe-0 pb-0">
+
+                                            <div class="cardtitle">
+                                                <h6>Customers</h6>
+                                                <h5>5,490</h5>
+                                            </div>
+                                            <div class="cardimg d-flex justify-content-end col-lg-5 col-md-6 col-sm-6">
+                                                <img class="cust2-icon" alt="" src="assets/customer.svg">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4  ">
+                                    <div class=" card border-0 cards ms-0  my-1 ps-0 " style="height: 5rem;">
+                                        <div
+                                            class="card-body card1 position-relative d-flex justify-content-between pe-0 pb-0">
+
+                                            <div class="cardtitle ">
+                                                <h6>Income</h6>
+                                                <h5>$980,432</h5>
+                                            </div>
+                                            <div class="cardimg d-flex justify-content-end col-lg-5 col-md-6 col-sm-6">
+                                                <img class="income-icon" alt="" src="assets/income.svg">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 ">
+                                    <div class=" card border-0 cards ms-0  my-1 ps-0  " style="height: 5rem;">
+                                        <div
+                                            class="card-body card1 position-relative d-flex justify-content-between pe-0 pb-0">
+                                            <div class="cardtitle justify-content-start ">
+                                                <h6>Products Sold</h6>
+                                                <h5>5,490</h5>
+                                            </div>
+                                            <div class="cardimg d-flex justify-content-end col-lg-5 col-md-6 col-sm-6">
+                                                <img class="product-sold-icon" alt="" src="assets/product-sold.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row midrow mt-4 ">
+                            <div class="row">
+                                <div class="midtitle ">
+                                    <h5>Marketplace</h5>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-between px-0 mx-0">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <div class="card midcard1 px-2 mt-1">
+                                        <div class="card-body d-flex justify-content-between align align-items-center">
+                                            <div class="midcarddata pe-5">
+                                                <h6>Data Analytics Overview</h6>
+                                                <p>See how your account grow and how you can boost it</p>
+                                            </div>
+                                            <div class="midcardimg">
+                                                <img src="assets/doughnut.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card midcard2 px-2 mt-3">
+                                        <div class="card-body d-flex justify-content-between">
+                                            <div class="midleft">
+                                                <div>
+                                                    <h6>Finance Flow</h6>
+                                                </div>
+                                                <div class="midcardamt  mt-4 pt-2">
+                                                    <h6>$2,530</h6>
+                                                    <p>September 2021</p>
+                                                </div>
+                                            </div>
+                                            <div class="midright">
+                                                <img src="assets/barchart.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-12 col-sm-12 mt-1 mrparent">
+                                    <div class="card midright bg-white ">
+                                        <div class="mrtitle border-bottom mx-3">
+                                            <h6 class="mt-3 justify-content-center d-flex">UPGRADE TO PRO</h6>
+                                        </div>
+                                        <div class="upgradeimg d-flex justify-content-center mt-3">
+                                            <img src="assets/upgrade.png" alt="">
+                                        </div>
+                                        <div class="upgradeprice text-center mt-3">
+                                            <p>$29 per/month</p>
+                                            <div class="my-3">
+                                                100% insurance for your goods
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table ">
+                            <tr>
+                                <td>
+                                    <h6>Recent Orders</h6>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class=""><a class="text-decoration-none fw-bold d-flex justify-content-end"
+                                        href="#">SEE ALL</a></td>
+                            </tr>
+                            <!-- <tbody> -->
+                            <tr>
+                                <td>#123456</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                                <td class="delivered d-flex justify-content-end pe-2">Delivered</td>
+                            </tr>
+                            <tr>
+                                <td>#123456</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>fat</td>
+                                <td class="cancelled d-flex justify-content-end pe-2">Cancelled</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-4 mainright">
+                        <div class="row">
+                            <h5 class="mt-4 ms-3">Summary</h5>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="card border-0 position-relative mt-3  " style="width: 18rem;">
+                                <div class="position-absolute top-50 start-100 translate-middle bg-danger rounded-circle d-flex align-items-center justify-content-center plusdiv"
+                                    data-bs-toggle="offcanvas" data-bs-target="#modal"
+                                    aria-controls="offcanvasWithBackdrop">
+                                    <i class="bi bi-plus-lg text-white fw-bold plusicon"></i>
+                                </div>
+                                <div class="card-body">
+                                    <div class="lh-sm d-flex justify-content-between">
+                                        <p class="urblnc">Your Balance</p>
+
+                                        <div class="btn-group fund-dropdown-parent">
+                                            <a href="" data-bs-toggle="dropdown"><i
+                                                    class="bi bi-three-dots-vertical text-secondary"></i></a>
+                                            <ul class="dropdown-menu fund-dropdown">
+                                                <li class="fundmenu"><a class="dropdown-item" href="#">Add Fund</a></li>
+                                                <li class="fundmenu"><a class="dropdown-item" href="#">View Balance</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blnc">
+                                        <h5 class=" fw-bold">$10 632.00</h5>
+                                    </div>
+                                    <div class="updown d-flex">
+                                        <div class="up pe-4">
+                                            <i class="bi bi-caret-up-fill"></i>
+                                            $3,250.07
+                                        </div>
+                                        <div class="down">
+                                            <i class="bi bi-caret-down-fill"></i>
+                                            $1,062.90
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="righttable d-flex justify-content-center">
+                            <table class="table mx-3 mt-3 table-borderless">
+
+                                <tr class="border-bottom">
+
+                                    <th scope="col">Activity</th>
+                                    <th scope="col"></th>
+                                    <th scope="col see-all"><a
+                                            class="text-decoration-none fw-bold d-flex justify-content-end"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal" href="">SEE ALL</a>
+                                    </th>
+                                </tr>
+
+                                <!-- <tbody> -->
+                                <tr>
+                                    <td colspan="2" class="d-flex justify-content-start align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid ">
+                                            <h6 class="Withdraw ">Withdraw Earning</h6>
+                                            <p>10:40 am</p>
+                                            <!-- <p class="Withdraw">Withdraw Earning</p> -->
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">$4,120</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="d-flex justify-content-start align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid ">
+                                            <h6 class="Withdraw ">Paying website tax</h6>
+                                            <p>10:20 am</p>
+                                            <!-- <p class="Withdraw">Withdraw Earning</p> -->
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">-$230</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="rightlower mx-3">
+                            <h6>Top Categories</h6>
+                            <p>Explore your top categories and keep shopping with cashback</p>
+                        </div>
+                        <div class="row d-flex justify-content-between mx-3">
+                            <!-- < class="rightlowest d-flex justify-content-between mx-3"> -->
+
+                            <div class=" col-lg-auto col-md-12 col-sm-12 foot mb-3 ">
+                                <div class="footimg mb-3">
+                                    <img src="assets/foot.svg" alt="">
+                                </div>
+                                <h6>Footwear</h6>
+                                <p>18,941 units</p>
+                            </div>
+                            <div class="col-lg-auto col-md-12 col-sm-12  hand ">
+                                <div class="footimg mb-3 ">
+                                    <img src="assets/hand.svg" alt="">
+                                </div>
+                                <h6>Accessories</h6>
+                                <p>26,061 units</p>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Activity</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex justify-content-center">
+                            <table class="table table-borderless  mt-3">
+                                <tr class="border-bottom">
+                                    <th scope="col">Activity</th>
+                                    <th scope="col"></th>
+                                    <th scope="col see-all"></th>
+                                </tr>
+                                <hr>
+
+                                <tr class="">
+
+                                    <td colspan="2" class="d-flex justify-content-between align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid">
+                                            <h6 class="Withdraw ">Withdraw Earning</h6>
+                                            <p>10:40 am</p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">$4,120</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="d-flex justify-content-between align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid">
+                                            <h6 class="Withdraw ">Paying website tax</h6>
+                                            <p>10:20 am</p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">-$230</td>
+                                </tr>
+                                <tr class="">
+
+                                    <td colspan="2" class="d-flex justify-content-between align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid">
+                                            <h6 class="Withdraw ">Withdraw Earning</h6>
+                                            <p>10:40 am</p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">$4,120</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="d-flex justify-content-between align-items-center">
+                                        <div class="wallet d-flex justify-content-center align-items-center ">
+                                            <i class="bi bi-wallet-fill text-white"></i>
+                                        </div>
+                                        <div class="tablemid">
+                                            <h6 class="Withdraw ">Paying website tax</h6>
+                                            <p>10:20 am</p>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td class="text-end amt">-$230</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- Backdrop -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="modal" aria-labelledby="offcanvasWithBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Backdrop</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload File</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <div class="twobtns">
+                        <div class="btn btn-outline-danger me-2">
+                            Reset
+                        </div>
+                        <div class="btn create">
+                            Create
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+                crossorigin="anonymous">
+                </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+                integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+                crossorigin="anonymous">
+                </script>
+</body>
+
+</html>

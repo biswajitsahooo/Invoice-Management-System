@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .middle{
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center ;
+        }
+        .button-create{
+            background: none;
+            border: 2px solid #000;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            min-width: 200px;
+            margin: 10px;
+            cursor: pointer;
+            transition: color 0.4s linear;
+            position: relative;
+        }
+        .button-create:hover{
+            color: #ffff;
+
+        }
+        .button-create::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0,5,1,6,0,4,0,7);
+        }
+        .button-create:before{
+            transform:scaleX(0);
+        }
+        .button-create:hover:before{
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="middle">
+        <button class="button">
+            Hover
+        </button>
+    </div>
+</body>
+
+</html>
