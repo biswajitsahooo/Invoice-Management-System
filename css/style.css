@@ -547,6 +547,9 @@ table tbody tr:hover span.bad2{
 .invoice-collapse .submenu{
   border-bottom: 1px solid #e7e7e7;
 }
+.invoice-collapse .submenu:active{
+  color: white ;
+}
 .invoice-collapse a{
   border: none;
 }
