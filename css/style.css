@@ -20,7 +20,7 @@ body{
     border-right: 4px solid #33C173;
   }
   .logo-img{
-    width: 120px;
+    width: 140px;
     
   }
   .rounded-circle{
@@ -96,7 +96,7 @@ body{
   background-color: #ffffff;
 }
 .mycard{
-  width: 55rem;
+  /* width: 55rem; */
   border-radius: 8px !important;
   box-shadow: 11px 0px 25px rgba(211, 211, 211, 0.53);
 

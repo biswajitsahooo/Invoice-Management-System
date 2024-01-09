@@ -22,11 +22,43 @@
 
   <!-- Sidebar -->
   <div class="container-fluid  px-0">
+    <div class="row">
+      <nav class="navbar navbar-expand navbar-light bg-white">
+        <div class="container-fluid pe-0 d-flex justify-content-between">
+            <div>
+              <img src="assets/logo1.png" alt="Logo" class="img-fluid mx-auto d-block  logo-img">
+            </div>
+            <div class="d-flex">
+              <div class="bell">
+                <a class="nav-link" href="#">
+                    <div class="position-relative">
+                        <i class="fa fa-bell noti" aria-hidden="true"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-0 bell-count"><span class="visually-hidden">unread messages</span></span>
+                      </div>
+                </a>
+            </div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                  <a class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="assets/Profile Pic.png" alt="Avatar" class="rounded-circle">
+                      <span class="myname">Biswajit Sahoo </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#"><i class="bi bi-person-circle pe-2"></i>Profile</a>
+                      <a class="dropdown-item" href="#"><i class="bi bi-gear-fill pe-2"></i>Settings</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#"><i class="fa fa-sign-out pe-2" aria-hidden="true"></i>Logout</a>
+                  </div>
+              </li>
+          </ul>
+            </div>
+        </div>
+      </nav>
+    </div>
     <div class="row gx-0">
       <div class="col-2 ">
-        <div class="sidebar">
-          <img src="assets/logo1.png" alt="Logo" class="img-fluid mx-auto d-block mb-4 mt-3 logo-img"
-          style="max-width: 80%;">
+        <div class="sidebar d-none d-lg-block pt-0">
         <ul class="side-menu">
           <li>
             <a href="dashboard.html" class="text-decoration-none menuitems d-flex">
@@ -82,41 +114,8 @@
         </div>
       </div>
 
-      <div class="col-10 col-sm-10">
-        <nav class="navbar navbar-expand navbar-light bg-white sticky-top">
-          <ul class="navbar-nav Notifications">
-            <li class="nav-item position-relative">
-              <div class="bell">
-                <a class="nav-link" href="#">
-                  <div class="position-relative">
-                    <i class="fa fa-bell noti" aria-hidden="true"></i>
-                    <span
-                      class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-0 bell-count"><span
-                        class="visually-hidden">unread messages</span></span>
-                  </div>
-                  <!-- <img class="count" src="assets/count.svg" alt=""> -->
-                </a>
-              </div>
-            </li>
-          </ul>
-
-          <!-- Avatar -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="btn  dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <img src="assets/Profile Pic.png" alt="Avatar" class="rounded-circle">
-                <span class="myname">Biswajit Sahoo </span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#"><i class="bi bi-person-circle pe-2"></i>Profile</a>
-                <a class="dropdown-item" href="#"><i class="bi bi-gear-fill pe-2"></i>Settings</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
-            </div>
-            </li>
-          </ul>
-        </nav>
+      <div class="col-lg-10 col-md-auto col-sm-auto ">
+        
         <div class="p-3 parent">
           <div class="row d-flex align-items-center labelparent">
             <div class="col-6 d-flex justify-content-start">
@@ -151,7 +150,7 @@
 
 
           <div class="row py-2">
-            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+            <div class="col-lg-4 col-md-6 col-sm-12 ">
               <div class="card mycard my-2 border-0">
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center">
@@ -171,7 +170,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+            <div class="col-lg-4 col-md-6 col-sm-12 ">
               <div class="card mycard my-2 border-0">
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center">
@@ -191,7 +190,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between">
+            <div class="col-lg-4 col-md-6 col-sm-12 ">
               <div class="card mycard my-2 border-0">
                 <div class="card-body d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center">
